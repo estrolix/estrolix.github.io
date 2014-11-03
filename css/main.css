@@ -44,27 +44,39 @@ html {
     background-size: cover;
 }
 
+body {
+    min-width: 210px;
+}
+
+html, body {
+    height: 100%;
+}
+
 content {
     width: 500px;
-    height: 550px;
     background: rgba(255,255,255,0.7);
-    padding: 50px;
+    padding: 30px 50px;
     border-radius: 10px;
     box-shadow: 1px 1px 12px rgba(0,0,0,0.25);
     position: fixed;
     top: 50%;
     left: 50%;
-    margin-top: -275px;
+    margin-top: -265px;
     margin-left: -250px;
     text-align: center;
+    transition: all 1.5s;
+}
+
+body.before-animation content {
+    opacity: 0;
+    margin-top: -300px;
 }
 
 .photo {
     width: 135px;
     height: 135px;
     border-radius: 100%;
-    margin: -117px auto 0;
-    transition: all 0.5s;
+    margin: -92px auto 0;
 }
 
 .name {
@@ -109,8 +121,20 @@ content {
    Media Queries
    ========================================================================== */
 
-@media only screen and (min-width: 35em) {
+@media only screen and (max-width: 510px) {
+    content {
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        margin: 0;
+        border-radius: 0;
+        padding: 20px;
+    }
 
+    .photo {
+        margin-top: 0;
+    }
 }
 
 @media print,
