@@ -21,7 +21,7 @@ html {
     @include background-size('cover');
 
     @media only screen and (max-width: $phone-breakpoint) {
-        background: #eee;
+        background: rgba(0,0,0,0.03);
     }
 
     body {
@@ -30,10 +30,8 @@ html {
 
         content {
             width: 500px;
-            background: rgba(255,255,255,0.7);
             padding: 30px 50px;
             border-radius: 10px;
-            box-shadow: 1px 1px 12px rgba(0,0,0,0.25);
             position: fixed;
             top: 50%;
             left: 50%;
@@ -43,6 +41,8 @@ html {
 
             @media only screen and (min-width: $phone-breakpoint+1) {
                 @include transition(all 1.5s);
+                box-shadow: 1px 1px 12px rgba(0,0,0,0.25);
+                background: rgba(255,255,255,0.7);
             }
 
             @media only screen and (max-width: $phone-breakpoint) {
