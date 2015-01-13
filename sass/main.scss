@@ -1,0 +1,116 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400&subset=latin);
+
+@import 'compass/css3';
+@import "compass/css3/selection";
+
+$phone-breakpoint: 510px;
+
+* {
+    box-sizing: border-box;
+    @include selection(#435c77, white)
+}
+
+html {
+    height: 100%;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 400;
+    color: #222;
+    background: image-url('bg.jpg') no-repeat top center fixed;
+    @include background-size('cover');
+
+    @media only screen and (max-width: $phone-breakpoint) {
+        background: #eee;
+    }
+
+    body {
+        height: 100%;
+        min-width: 210px;
+
+        content {
+            width: 500px;
+            background: rgba(255,255,255,0.7);
+            padding: 30px 50px;
+            border-radius: 10px;
+            box-shadow: 1px 1px 12px rgba(0,0,0,0.25);
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            margin-top: -265px;
+            margin-left: -250px;
+            text-align: center;
+
+            @media only screen and (min-width: $phone-breakpoint+1) {
+                @include transition(all 1.5s);
+            }
+
+            @media only screen and (max-width: $phone-breakpoint) {
+                position: static;
+                display: block;
+                width: 100%;
+                margin: 0;
+                border-radius: 0;
+                padding: 20px;
+            }
+
+            .photo {
+                width: 135px;
+                height: 135px;
+                border-radius: 100%;
+                margin: -92px auto 0;
+
+                @media only screen and (max-width: $phone-breakpoint) {
+                    margin-top: 0;
+                }
+            }
+
+            .name {
+                font-size: 28px;
+                text-align: center;
+                margin: 10px 0 0;
+            }
+
+            .info {
+                font-size: 16px;
+                text-align: center;
+                margin: 5px 0 30px;
+            }
+
+            .social {
+                margin-top: 50px;
+
+                a {
+                    text-decoration: none;
+                    color: #222;
+                }
+
+                i {
+                    width: 16px;
+                    font-size: 16px;
+                    height: 16px;
+                    border: 1px solid #222;
+                    padding: 4px;
+                    box-sizing: content-box;
+                    border-radius: 100%;
+                    cursor: pointer;
+                    @include transition(all 0.5s);
+
+                    &:hover {
+                        color: #777;
+                        border-color: #777;
+                        @include transform(rotate(360deg));
+                    }
+                }
+            }
+        }
+
+        @media only screen and (min-width: $phone-breakpoint+1) {
+            &.before-animation content {
+                opacity: 0;
+                margin-top: -300px;
+            }
+        }
+
+    }
+}
